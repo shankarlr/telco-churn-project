@@ -2,7 +2,7 @@
 
 A complete, end-to-end machine learning project that predicts whether a telecom customer is likely to churn.
 This project covers data cleaning, feature engineering, model training, evaluation, and a simple Streamlit app for interactive predictions.
-:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🔍 Overview
 
