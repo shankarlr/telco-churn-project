@@ -3,6 +3,11 @@
 A complete, end-to-end machine learning project that predicts whether a telecom customer is likely to churn.
 This project covers data cleaning, feature engineering, model training, evaluation, and a simple Streamlit app for interactive predictions.
 
+
+⭐ Streamlit App Screenshot
+--------------------------------------
+![Streamlit UI](images/telcostreamlitapp.png)
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🔍 Overview
@@ -30,26 +35,8 @@ This project builds a lightweight, interpretable model (Logistic Regression) usi
 🗂️ Project Structure
 --------------------------------------
 
-telco-churn-project/
-│
-├── data/
-│   ├── raw/                         # original dataset (telco_churn.csv)
-│   ├── processed_telco.csv          # after cleaning
-│   └── processed_with_features.csv  # after feature engineering
-│
-├── models/
-│   └── simple_model.joblib          # trained ML model
-│
-├── src/
-│   ├── data_prep.py                 # loading + cleaning
-│   ├── features.py                  # feature engineering
-│   └── model.py                     # model training
-│
-├── app/
-│   └── streamlit_app.py             # Streamlit UI
-│
-├── run_all.py                       # full pipeline runner
-└── README.md
+![Folder Structure](images/folstructelco.png)
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
