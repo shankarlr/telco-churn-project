@@ -1,4 +1,3 @@
-    # src/data_prep.py
 import pandas as pd
 from pathlib import Path
 
@@ -6,27 +5,17 @@ RAW_PATH = Path("data/raw/telco_churn.csv")
 PROCESSED_PATH = Path("data/processed_telco.csv")
 
 def load_raw(path: Path = RAW_PATH):
-    """Load raw CSV; returns a DataFrame."""
     if not path.exists():
         raise FileNotFoundError(f"Raw file not found at {path}. Please download dataset and place it there.")
     return pd.read_csv(path)
 
 def clean(df: pd.DataFrame) -> pd.DataFrame:
-    """Simple cleaning:
-       - strip whitespace on strings
-       - convert TotalCharges to numeric (spaces -> NaN -> 0)
-       - convert Yes/No to 1/0 where present
-    """
     df = df.copy()
-    # Trim whitespace from string columns
     for c in df.select_dtypes(include=['object']).columns:
         df[c] = df[c].astype(str).str.strip()
-    # Convert TotalCharges to numeric
     if 'TotalCharges' in df.columns:
         df['TotalCharges'] = pd.to_numeric(df['TotalCharges'].replace(' ', ''), errors='coerce').fillna(0)
-    # Map Yes/No to 1/0
     for c in df.columns:
-        # check small sample of values
         sample = df[c].dropna().astype(str).unique()[:5].tolist()
         if set(sample) & {'Yes','No'}:
             df[c] = df[c].map({'Yes':1, 'No':0})
