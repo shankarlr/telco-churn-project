@@ -1,4 +1,3 @@
-# tests/test_data_prep.py
 from src.data_prep import clean
 import pandas as pd
 
