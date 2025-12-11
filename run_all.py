@@ -1,4 +1,3 @@
-# run_all.py
 from src.data_prep import run as run_prep
 from src.features import run as run_features
 from src.model import train_and_save
