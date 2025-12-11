@@ -19,10 +19,8 @@ def load_data(path: Path = DATA_PATH):
 
 def prepare_xy(df: pd.DataFrame):
     df = df.copy()
-    # convert Churn to 0/1 if needed
     if df['Churn'].dtype == object:
         df['Churn'] = df['Churn'].map({'Yes':1, 'No':0})
-    # features we will use (simple, explainable)
     features = [f for f in ['tenure','MonthlyCharges','TotalCharges','num_services','Contract'] if f in df.columns]
     X = df[features]
     y = df['Churn']
