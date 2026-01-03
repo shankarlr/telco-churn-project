@@ -1,6 +1,5 @@
 import joblib
 import pandas as pd
-
 model = joblib.load("models/simple_model.joblib")
 preproc = model.named_steps['preproc']
 clf = model.named_steps['clf']
